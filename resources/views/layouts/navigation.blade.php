@@ -13,8 +13,33 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('home') }}
                     </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('goal.mypage')" :active="request()->routeIs('goal.mypage')">
+                    {{ __('目標') }}
+                  </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('goal.create')" :active="request()->routeIs('goal.create')">
+                    {{ __('目標設定') }}
+                  </x-nav-link>
+                </div>
+               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('goal.index')" :active="request()->routeIs('goal.index')">
+                    {{ __('みんなの目標') }}
+                  </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
+                    {{ __('行動ログ') }}
+                  </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('chartjs')">
+                    {{ __('個人データ') }}
+                  </x-nav-link>
                 </div>
             </div>
 
@@ -70,6 +95,31 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('goal.mypage')" :active="request()->routeIs('goal.mypage')">
+            {{ __('目標') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('goal.create')" :active="request()->routeIs('goal.create')">
+            {{ __('目標設定') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('goal.index')" :active="request()->routeIs('goal.index')">
+            {{ __('みんなの目標') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
+            {{ __('行動ログ') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('chartjs')" :active="request()->routeIs('chartjs')">
+            {{ __('個人データ') }}
+          </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

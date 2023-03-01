@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function userGoals()
+      {
+        return $this->hasMany(Goal::class);
+      }
+    
+     public function tweets()
+      {
+        return $this->belongsToMany(Goal::class)->withTimestamps();
+      }
+     
+     public function chats()
+      {
+        return $this->belongsToMany(Chat::class)->withTimestamps();
+      }
 }
