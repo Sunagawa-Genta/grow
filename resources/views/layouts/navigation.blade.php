@@ -9,7 +9,6 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -34,6 +33,11 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                   <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
                     {{ __('行動ログ') }}
+                  </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('full-calender')">
+                    {{ __('共有スケジュール') }}
                   </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -114,6 +118,11 @@
         <div class="pt-2 pb-3 space-y-1">
           <x-responsive-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
             {{ __('行動ログ') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('full-calender')">
+            {{ __('共有スケジュール') }}
           </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">

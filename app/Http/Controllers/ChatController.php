@@ -19,7 +19,7 @@ class ChatController extends Controller
         
         if($request->session()->missing('user_identifier')){ session(['user_identifier' => Str::random(20)]); }
         
-        if($request->session()->missing('user_name')){ session(['user_name' => 'Guest']); }
+        // if($request->session()->missing('user_name')){ session(['user_name' => 'Name']); }
         
         // データーベースの件数を取得
         $length = Chat::all()->count();
@@ -29,7 +29,13 @@ class ChatController extends Controller
 
         $chats = Chat::offset($length-$display)->limit($display)->get();
         return view('chat/index',compact('chats'));
-   
+        
+        
+        //二月のカウント
+        // $feb =Chat::whereMonth('created_at', '2')->get();
+        // $num2 = (int)$feb;
+        // return view('chat/index', compact('num2'));
+        
     }
 
     /**
@@ -63,11 +69,9 @@ class ChatController extends Controller
           ->withInput()
           ->withErrors($validator);
       }
-      // create()は最初から用意されている関数
-      // 戻り値は挿入されたレコードの情報
       $result = Chat::create($request->all());
-      // ルーティング「tweet.index」にリクエスト送信（一覧ページに移動）
       return redirect()->route('chat.index');
+     
     }
 
     /**
@@ -114,4 +118,5 @@ class ChatController extends Controller
     {
         //
     }
+    
 }

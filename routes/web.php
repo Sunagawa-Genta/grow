@@ -6,6 +6,8 @@ use App\Http\Controllers\GoalController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\FinishController;
 use App\Http\Controllers\ChatFavoriteController;
+use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\FullCalenderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +26,19 @@ Route::middleware('auth')->group(function () {
   Route::resource('chat', ChatController::class);
   Route::get('/goal/mypage', [GoalController::class, 'mydata'])->name('goal.mypage');
   Route::resource('goal', GoalController::class);
+  Route::get('full-calender',[FullCalenderController::class,'index'])->name('full-calender');
+  Route::post('full-calender/action', [FullCalenderController::class, 'action']);
 });
+
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/event', function () {
+    return view('event');
+})->middleware(['auth', 'verified'])->name('event');
 
 Route::get('/chartjs', function () {
     return view('chartjs');
