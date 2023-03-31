@@ -15,7 +15,7 @@
   
 <div class="container">
     <br />
-    <h1 class="text-center text-primary">スケジュール</h1>
+    <h1 class="text-center  black">カレンダー</h1>
     <br />
 
     <div id="calendar"></div>

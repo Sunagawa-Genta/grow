@@ -8,6 +8,10 @@ use App\Http\Controllers\FinishController;
 use App\Http\Controllers\ChatFavoriteController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\FullCalenderController;
+use App\Http\Controllers\ChartjsController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,25 +32,30 @@ Route::middleware('auth')->group(function () {
   Route::resource('goal', GoalController::class);
   Route::get('full-calender',[FullCalenderController::class,'index'])->name('full-calender');
   Route::post('full-calender/action', [FullCalenderController::class, 'action']);
+  Route::resource('chartjs', ChartjsController::class);
 });
-
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/event', function () {
     return view('event');
 })->middleware(['auth', 'verified'])->name('event');
 
-Route::get('/chartjs', function () {
-    return view('chartjs');
-})->middleware(['auth', 'verified'])->name('chartjs');
+// Route::get('/chartjs', function () {
+//     return view('chartjs/chartjs');
+// })->middleware(['auth', 'verified'])->name('chartjs');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/use', function () {
+    return view('use');
+})->middleware(['auth', 'verified'])->name('use');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

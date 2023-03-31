@@ -6,17 +6,23 @@
     </head>
     <style>
     h1 {
-        color:#ececec;
+        color:black;
         font-size:100px;
         display:flex;
         justify-content: center;
         align-items: center;
     }
+    
     body{
-        background-color:#331f82;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+ 　　　 　 height: 100vh;
+        background-image: url(https://images.pexels.com/photos/3951881/pexels-photo-3951881.jpeg);
     }
+    
     a{
-        color:#ececec;
+        color:black;
         font-size:40px;
         display:flex;
         justify-content: center;
@@ -24,7 +30,7 @@
     }
     </style>
 　　<body>
-　　    <h1>GROW</h1>
+　　    <h1>GROW</h1><br>
             @if (Route::has('login'))
                 <div>
                     @auth

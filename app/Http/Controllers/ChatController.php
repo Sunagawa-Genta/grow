@@ -29,13 +29,11 @@ class ChatController extends Controller
 
         $chats = Chat::offset($length-$display)->limit($display)->get();
         return view('chat/index',compact('chats'));
-        
-        
-        //二月のカウント
+        // //二月のカウント
         // $feb =Chat::whereMonth('created_at', '2')->get();
         // $num2 = (int)$feb;
-        // return view('chat/index', compact('num2'));
-        
+        // ddd($num2);
+        // return view('chatjs.chartjs';
     }
 
     /**
@@ -93,7 +91,8 @@ class ChatController extends Controller
      */
     public function edit($id)
     {
-        //
+        $chats = Chat::find($id);
+        return response()->view('chat.edit', compact('chats'));
     }
 
     /**
@@ -105,7 +104,21 @@ class ChatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //バリデーション
+      $validator = Validator::make($request->all(), [
+        'message' => 'required | max:191',
+        // 'user_name' => 'required',
+      ]);
+      //バリデーション:エラー
+      if ($validator->fails()) {
+        return redirect()
+          ->route('chat.edit', $id)
+          ->withInput()
+          ->withErrors($validator);
+      }
+      //データ更新処理
+      $result = Chat::find($id)->update($request->all());
+      return redirect()->route('chat.index');
     }
 
     /**
@@ -116,7 +129,8 @@ class ChatController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $chats = Chat::find($id)->delete();
+        return redirect()->route('chat.index');
     }
     
 }

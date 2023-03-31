@@ -1,28 +1,35 @@
 <x-app-layout>
-  <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('目標設定') }}
-    </h2>
-  </x-slot>
-<div class="">
-  <div class="py-12">
-      <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-          <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
-            <h2>GROWモデルについて</h2>
-            <h3>G:Goal(目標・ほしい結果)</h3>
-            <p>達成したい目標やほしい結果を明確にする</p>
-            <h3>R:Reality Check(現実の確認)</h3>
-            <p>客観的なスタート地点を特定する</p>
-            <h3>O:Options(選択肢)</h3>
-            <p>達成するためにどのような選択肢があるか</p>
-            <h3>W:Will(意志)</h3>
-            <p>アクションプランを作成する</p>
-          </div>
-        </div>
+  <div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div class="grid grid-cols-2 gap-5 rounded-lg bg-indigo-100 p-6 sm:h-30 sm:content-evenly md:grid-cols-4">
+      <!-- logo - start -->
+      <div class="text-indigo-500">
+        <h3 class="font-bold">G:Goal(目標・ほしい結果)</h3>
+  　　　　<p>達成したい目標やほしい結果を明確にする</p>
       </div>
+      <!-- logo - end -->
+      <!-- logo - start -->
+      <div class="text-indigo-500">
+        <h3 class="font-bold">R:Reality Check(現実の確認)</h3>
+  　　　　<p>客観的なスタート地点を特定する</p>
+      </div>
+      <!-- logo - end -->
+      <!-- logo - start -->
+      <div class="text-indigo-500">
+        <h3 class="font-bold">O:Options(選択肢)</h3>
+  　　　　<p>達成するためにどのような選択肢があるか</p>
+      </div>
+      <!-- logo - end -->
+      <!-- logo - start -->
+      <div class="text-indigo-500">
+        <h3 class="font-bold">W:Will(意志)</h3>
+  　　　　<p>アクションプランを作成する</p>
+      </div>
+      <!-- logo - end -->
     </div>
-    <div class="py-12">
+  </div>
+</div>
+    <div class="py-10">
       <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
           <div class="p-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 ">
