@@ -7,7 +7,7 @@
     </head>
     <body class="w-4/5 md:w-3/5 lg:w-2/5">
             <div class="mt-8">
-                <form class="w-10/12 mx-auto md:max-w-md" action="/chat" method="POST" enctype="multipart/form-data">
+                <form class="w-10/12 mx-auto md:max-w-md" action="{{ route('chat.index') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <input type="hidden" name="user_identifier" value={{session('user_identifier')}}>
                     <div class="mb-2">
