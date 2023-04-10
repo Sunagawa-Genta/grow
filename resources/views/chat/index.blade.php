@@ -9,9 +9,8 @@
             <div class="mt-8">
                 <form class="w-10/12 mx-auto md:max-w-md" action="{{ route('chat.index') }}" method="POST" enctype="multipart/form-data">
                      @csrf
-                     <input type="hidden" name="user_identifier" value={{session('user_identifier')}}>
                     <div class="mb-2">
-                        <label for="name" class="block font-bold">名前:nameと同じものを入れてね</label>
+                        <label for="name" class="block font-bold">名前:あなたの名前を入れてね</label>
                         <input type="text" name="user_name" placeholder="UserName" maxlength="20" value="{{session('user_name')}}" required class="w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50 rounded-md">
                     </div>
                     <div class="mb-2">
@@ -42,7 +41,8 @@
                           <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-800 dark:text-gray-200">{{$chat->message}}</td>
                           <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
                             <div class="flex">
-                             <!-- favorite 状態で条件分岐 -->
+                          @if ($chat->user_id === Auth::user()->id)　 
+                          　 <!-- favorite 状態で条件分岐 -->
                             @if($chat->users()->where('user_id', Auth::id())->exists())
                             <!-- unfavorite ボタン -->
                             <form action="{{ route('unfavorites',$chat) }}" method="POST" class="text-left">
@@ -84,6 +84,7 @@
                                 </svg>
                               </x-primary-button>
                             </form>
+                            @endif
                             </div>
                           </td>
                         </tr>

@@ -9,6 +9,8 @@ use App\Http\Controllers\ChatFavoriteController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\ChartjsController;
+use App\Http\Controllers\LogController;
+use App\Http\Controllers\ReplyController;
 
 
 
@@ -33,6 +35,10 @@ Route::middleware('auth')->group(function () {
   Route::get('full-calender',[FullCalenderController::class,'index'])->name('full-calender');
   Route::post('full-calender/action', [FullCalenderController::class, 'action']);
   Route::resource('chartjs', ChartjsController::class);
+  Route::resource('log', LogController::class);
+  Route::get('/log/mypage', [LogController::class, 'mydata'])->name('log.mypage');
+  Route::post('/posts/{postId}/replies', [ReplyController::class, 'store'])->name('replies.store');
+  Route::delete('/replies/{id}', [ReplyController::class, 'destroy'])->name('replies.destroy');
 });
 
 

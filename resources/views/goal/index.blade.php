@@ -25,8 +25,8 @@
               <tr class="hover:bg-gray-lighter">
                 <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
                   <a href="{{ route('goal.show',$goal->id) }}" class="text-lg font-bold"> 
-                    <p class="text-left text-gray-800 dark:text-gray-200">{{$goal->user->name}}</p>
-                    <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">{{$goal->goal}}</h3>
+                    <p class="text-left text-gray-800 dark:text-gray-200">名前:{{$goal->user->name}}</p>
+                    <h3 class="text-left  text-lg text-gray-dark dark:text-gray-200">目標:{{$goal->goal}}</h3>
                   </a>
                   <div class="flex">
                     <a href={{route('chat.index')}}>

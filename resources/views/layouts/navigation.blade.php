@@ -35,9 +35,19 @@
                     {{ __('みんなの目標') }}
                   </x-nav-link>
                 </div>
+                <!--<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">-->
+                <!--  <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">-->
+                <!--    {{ __('行動ログ') }}-->
+                <!--  </x-nav-link>-->
+                <!--</div>-->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                  <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
-                    {{ __('行動ログ') }}
+                  <x-nav-link :href="route('log.index')" :active="request()->routeIs('log.index')">
+                    {{ __('行動を見る') }}
+                  </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('log.create')" :active="request()->routeIs('log.create')">
+                    {{ __('行動を記録する') }}
                   </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -126,10 +136,20 @@
           </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-          <x-responsive-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">
-            {{ __('行動ログ') }}
+          <x-responsive-nav-link :href="route('log.index')" :active="request()->routeIs('log.index')">
+            {{ __('行動を見る') }}
           </x-responsive-nav-link>
         </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('log.create')" :active="request()->routeIs('log.create')">
+            {{ __('行動を記録する') }}
+          </x-responsive-nav-link>
+        </div>
+        <!--<div class="pt-2 pb-3 space-y-1">-->
+        <!--  <x-responsive-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.index')">-->
+        <!--    {{ __('行動ログ') }}-->
+        <!--  </x-responsive-nav-link>-->
+        <!--</div>-->
         <div class="pt-2 pb-3 space-y-1">
           <x-responsive-nav-link :href="route('full-calender')">
             {{ __('共有スケジュール') }}
